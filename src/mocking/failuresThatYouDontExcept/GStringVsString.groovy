@@ -1,3 +1,5 @@
+import spock.lang.Specification
+
 class GStringVsString extends Specification {
     def "failing test"() {
         /* fails with:
