@@ -40,12 +40,6 @@ class SampleHttpClientMockSpec extends Specification {
         given:
         def httpClient = GroovyMock(HttpClient)
         def clazz = new Clazz(httpClient)
-        def statusLine = GroovyStub(StatusLine) {
-            getStatusCode() >> 111
-        }
-        httpClient.execute(_ as HttpUriRequest) >> GroovyStub(HttpResponse) {
-            getStatusLine() >> statusLine
-        }
 
         when:
         clazz.call()
